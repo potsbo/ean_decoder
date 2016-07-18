@@ -1,5 +1,11 @@
 require "ean_decoder/version"
 
 module EanDecoder
-  # Your code goes here...
+  def country
+    'jp'
+  end
+end
+
+class String
+  include EanDecoder
 end

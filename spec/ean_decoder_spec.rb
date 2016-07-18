@@ -5,7 +5,7 @@ describe EanDecoder do
     expect(EanDecoder::VERSION).not_to be nil
   end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
+  it 'should identify Japan' do
+    expect('1234567890123'.country).to eq('jp')
   end
 end
