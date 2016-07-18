@@ -16,8 +16,8 @@ describe EanDecoder do
     base = '1234567890123'
     rest = base[3...13]
     manu_rest = base[3...7]
-    ((450..455).to_a + (490..499).to_a).each do |code|
-      expect((code.to_s + rest).manufacturer_code).to eq(code.to_s + manu_rest)
+    (('450'..'455').to_a + ('490'..'499').to_a).each do |code|
+      expect((code + rest).manufacturer_code).to eq(code + manu_rest)
     end
   end
 
@@ -25,8 +25,8 @@ describe EanDecoder do
     base = '1234567890123'
     rest = base[3...13]
     manu_rest = base[3...9]
-    (456..459).to_a.each do |code|
-      expect((code.to_s + rest).manufacturer_code).to eq(code.to_s + manu_rest)
+    ('456'..'459').to_a.each do |code|
+      expect((code + rest).manufacturer_code).to eq(code + manu_rest)
     end
   end
 end

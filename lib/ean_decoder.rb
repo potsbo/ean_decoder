@@ -7,10 +7,7 @@ module EanDecoder
 
   def manufacturer_code
     return unless country == 'jp'
-    digs = case self[0...3]
-             when '456','457','458','459' then 9
-             else 7
-           end
+    digs = ('456'..'459').to_a.include?(self[0...3]) ? 9 : 7
     self[0...digs]
   end
 end
